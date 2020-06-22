@@ -19,9 +19,11 @@ from dhooks import Webhook, Embed
 
 # use different chromedrivers depending on the system OS
 if platform == "darwin":
-    chromedriver = "./chromedriver"
+    chromedriver = "./chromedriver_mac"
 elif platform == "win32":
     chromedriver = "./chromedriver.exe"
+elif platform == "linux":
+    chromedriver = "/chromedriver"
 
 def hook_send(product_url, stock):
     print(product_url)
