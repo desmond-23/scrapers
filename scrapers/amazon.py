@@ -17,6 +17,12 @@ from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.webdriver.common.keys import Keys
 from dhooks import Webhook, Embed
 
+# use different chromedrivers depending on the system OS
+if platform == "darwin":
+    chromedriver = "./chromedriver"
+elif platform == "win32":
+    chromedriver = "./chromedriver.exe"
+
 def hook_send(product_url, stock):
     print(product_url)
     hook = Webhook(
@@ -37,7 +43,7 @@ while True:
     prox.https_proxy = "https://e0487c83dd6f444a9f9df543f8a461d6@proxy.crawlera.com:8010/"
     prox.http_proxy = "http://e0487c83dd6f444a9f9df543f8a461d6@proxy.crawlera.com:8010/"
     prox.add_to_capabilities(desired_caps)
-    driver = webdriver.Chrome(desired_capabilities=desired_caps)
+    driver = webdriver.Chrome(executable_path=chromedriver, desired_capabilities=desired_caps)
 
     url = 'https://www.amazon.com'
     driver.get(url)
