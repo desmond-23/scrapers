@@ -42,8 +42,8 @@ while True:
 
     prox = Proxy()
     prox.proxy_type = ProxyType.MANUAL
-    prox.https_proxy = "https://e0487c83dd6f444a9f9df543f8a461d6@proxy.crawlera.com:8010/"
-    prox.http_proxy = "http://e0487c83dd6f444a9f9df543f8a461d6@proxy.crawlera.com:8010/"
+    prox.http_proxy = "http://scraperapi.country_code=us:1b7080951f89c7feca19ad9801aed691@proxy-server.scraperapi.com:8001"
+    prox.https_proxy = "https://scraperapi.country_code=us:1b7080951f89c7feca19ad9801aed691@proxy-server.scraperapi.com:8001"
     prox.add_to_capabilities(desired_caps)
     driver = webdriver.Chrome(desired_capabilities=desired_caps)
 
