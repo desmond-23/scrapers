@@ -45,7 +45,7 @@ while True:
     prox.https_proxy = "https://e0487c83dd6f444a9f9df543f8a461d6@proxy.crawlera.com:8010/"
     prox.http_proxy = "http://e0487c83dd6f444a9f9df543f8a461d6@proxy.crawlera.com:8010/"
     prox.add_to_capabilities(desired_caps)
-    driver = webdriver.Chrome(executable_path="chromedriver", desired_capabilities=desired_caps)
+    driver = webdriver.Chrome(desired_capabilities=desired_caps)
 
     url = 'https://www.amazon.com'
     driver.get(url)
